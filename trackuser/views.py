@@ -28,9 +28,13 @@ def dologin(request):
 		return HttpResponseRedirect('/?err=true')
 
 def profile(request):
+	c = Context({})
 	try:
 		u = User.objects.get(id=request.session['uid'])
+		loginList = Login.objects.filter(user=u)
 		return HttpResponse(u.username)
+		c['loginList'] = loginList
+		c['username'] = u.username
 	except KeyError:
 		return HttpResponse("Not logged in yet")
 	except (User.DoesNotExist, User.MultipleObjectsReturned):
