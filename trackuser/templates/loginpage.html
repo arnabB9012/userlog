@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>User Login page</title>
+</head>
+
+<body>
+<div>{{ errormsg }}</div>
+<form method="POST" action="dologin">
+{% csrf_token %}
+<input type="text" name="username">Username</input>
+<input type="text" name="password">Password</input>
+<input type="Submit" name="login">Submit</input>
+</form>
+</body>
+
+</html>
