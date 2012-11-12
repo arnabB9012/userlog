@@ -7,7 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'trackuser.views.login'),
-    url(r'^login', 'trackuser.views.login'),
+    url(r'^dologin', 'trackuser.views.dologin'),
+    url(r'^profile', 'trackuser.views.profile'),
     # url(r'^userlog/', include('userlog.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
